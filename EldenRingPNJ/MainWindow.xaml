@@ -1,0 +1,152 @@
+﻿<Window x:Class="EldenRingPNJ.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EldenRingPNJ"
+        mc:Ignorable="d"
+        Title="MainWindow" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch"
+ WindowState="Maximized" Height="768px" Width="1366" 
+        >
+    <Window.Background>
+        <ImageBrush ImageSource="/fondo.jpg"/>
+    </Window.Background>
+
+    <Grid>
+        <Grid HorizontalAlignment="Left" Margin="27,280,0,121" Width="376" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="102"/>
+                <RowDefinition Height="160"/>
+                <RowDefinition Height="143"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="153"/>
+                <ColumnDefinition Width="114"/>
+                <ColumnDefinition Width="253"/>
+            </Grid.ColumnDefinitions>
+            <Image  Name="imgDynamic" HorizontalAlignment="Left" Height="236" Width="136"  VerticalAlignment="Top" Margin="6,16,0,0" Grid.RowSpan="2"    />
+            <ComboBox Name="cbselect" HorizontalAlignment="Center" Grid.Row="2" Width="104"  SelectedIndex="0" SelectionChanged="cbselect_SelectionChanged"  FontFamily="Bahnschrift Condensed" FontSize="24" Height="39" VerticalAlignment="Top" Margin="0,10,0,0" RenderTransformOrigin="0.5,0.5" >
+
+            </ComboBox>
+            <Label  Grid.Column="1"  Content="HP"  VerticalAlignment="Top" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FF12B795" HorizontalAlignment="Center" Width="90" Grid.Row="1" Margin="0,47,0,0"/>
+            <Label  Grid.Column="1"  Content="FP"  VerticalAlignment="Top" Height="36" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FF12B795" HorizontalAlignment="Left" Width="72" Margin="14,88,0,0" Grid.Row="1"/>
+            <Label  Grid.Column="1"  Content="Stamina" VerticalAlignment="Top" Height="35" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FF12B795" HorizontalAlignment="Center" Width="90" Margin="0,127,0,0" Grid.Row="1" RenderTransformOrigin="0.596,-1.028" Grid.RowSpan="2"/>
+            <Label  Grid.Column="1"  Content="Level"   VerticalAlignment="Top" Height="35" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FF12B795" HorizontalAlignment="Center" Width="90" Margin="0,4,0,0" Grid.Row="1"/>
+            <Label  Grid.Column="2" Name="lvl"  VerticalAlignment="Top" Height="35" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FF12B795" HorizontalAlignment="Left" Width="90" Margin="12,4,0,0" Grid.Row="1"/>
+            <Label  Grid.Column="2" Name="hp"  VerticalAlignment="Top" Height="36" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FF12B795" HorizontalAlignment="Left" Width="90" Margin="11,46,0,0" Grid.Row="1"/>
+            <Label  Grid.Column="2" Name="stamina" VerticalAlignment="Top" Height="35" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FF12B795" HorizontalAlignment="Left" Width="90" Margin="10,127,0,0" Grid.Row="1" Grid.RowSpan="2"/>
+            <Label  Grid.Column="2" Name="fp" VerticalAlignment="Top" Height="35" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FF12B795" HorizontalAlignment="Left" Width="90" Margin="11,89,0,0" Grid.Row="1"/>
+            <ComboBox x:Name="cbWeapons" HorizontalAlignment="Left" VerticalAlignment="Center" Width="90" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Bahnschrift Condensed" FontSize="36" Grid.Column="1" Margin="8,0,0,0" Height="50"/>
+            <Image  MouseDown="btnSearch_MouseDown"  Name="imgWeapon" HorizontalAlignment="Left" Height="86" Margin="14,-2,0,0" VerticalAlignment="Top" Width="90" Grid.Column="1"  />
+            <ComboBox x:Name="cbShields" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Width="90" SelectionChanged="cbShields_SelectionChanged" FontFamily="Bahnschrift Condensed" FontSize="36" Background="#FFCC0E0E" Height="50" Margin="6,0,0,0"/>
+            <Image x:Name="imgShields" Grid.Column="2" Height="84" Margin="12,11,0,0" VerticalAlignment="Top" MouseDown="imgShields_MouseDown" RenderTransformOrigin="1,0.5" HorizontalAlignment="Left" Width="80"/>
+        </Grid>
+        <Button Content="Salir" Height="50" Width="170" Background="#FF860B0B" FontSize="36" FontFamily="Bahnschrift Condensed" Foreground="#FFFDFDFD" Click="Button_Click_16" HorizontalAlignment="Left" Margin="2,701,0,1"/>
+
+        <Grid  HorizontalAlignment="Right" Width="310" Margin="0,118,33,55" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="44*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="47*"/>
+                <ColumnDefinition Width="27*"/>
+                <ColumnDefinition Width="39*"/>
+                <ColumnDefinition Width="21*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Vigor" VerticalAlignment="Center" Height="35" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FF12B795" HorizontalAlignment="Center" Width="90"/>
+            <Label Content="Mind" VerticalAlignment="Center" Height="35" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FF12B795" HorizontalAlignment="Center" Width="90" Grid.Row="1"/>
+            <Label Content="Endurance" Grid.Row="4" VerticalAlignment="Center" Height="35" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FF12B795" HorizontalAlignment="Center" Width="90"/>
+            <Label Content="Strength" Grid.Row="2" VerticalAlignment="Center" Height="35" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FF12B795" HorizontalAlignment="Center" Width="90"/>
+            <Label Content="Dexterity" Grid.Row="3" VerticalAlignment="Center" Height="35" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FF12B795" HorizontalAlignment="Center" Width="90"/>
+            <Label Content="Intelligence"  Grid.Row="5" VerticalAlignment="Center" Height="35" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FF12B795" HorizontalAlignment="Center" Width="90"/>
+            <Label Content="Faith" Grid.Row="6" VerticalAlignment="Center" Height="35" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FF12B795" HorizontalAlignment="Center" Width="90"/>
+            <Label Content="Arcane" Grid.Row="7" VerticalAlignment="Center" Height="35" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FF12B795" HorizontalAlignment="Center" Width="90"/>
+            <Button Grid.Column="1" Content="-" Grid.Row="0" Click="Button_Click_1" Background="#FFD60F0F" FontFamily="Bahnschrift Condensed" FontSize="36" Width="36" Height="35" HorizontalAlignment="Center" />
+            <Button Grid.Column="1" Content="-" Grid.Row="1" Click="Button_Click_2" Background="#FFD60F0F" FontFamily="Bahnschrift Condensed" FontSize="36" Width="36" Height="35" HorizontalAlignment="Center" />
+            <Button Grid.Column="1" Content="-" Grid.Row="2" Click="Button_Click_4" Background="#FFD60F0F" FontFamily="Bahnschrift Condensed" FontSize="36" Width="36" Height="35" HorizontalAlignment="Center" />
+            <Button Grid.Column="1" Content="-" Grid.Row="4" Click="Button_Click_6" Background="#FFD60F0F" FontFamily="Bahnschrift Condensed" FontSize="36" Width="36" Height="35" HorizontalAlignment="Center"/>
+            <Button Grid.Column="1" Content="-" Grid.Row="3" Click="Button_Click_8"  Background="#FFD60F0F" FontFamily="Bahnschrift Condensed" FontSize="36" Width="36" Height="35" HorizontalAlignment="Center" />
+            <Button Grid.Column="1" Content="-" Grid.Row="5" Click="Button_Click_10" Background="#FFD60F0F" FontFamily="Bahnschrift Condensed" FontSize="36" Width="36" Height="35" HorizontalAlignment="Center" />
+            <Button Grid.Column="1" Content="-" Grid.Row="6" Click="Button_Click_12" Background="#FFD60F0F" FontFamily="Bahnschrift Condensed" FontSize="36" Width="36" Height="35" HorizontalAlignment="Center" />
+            <Button Grid.Column="1" Content="-" Grid.Row="7" Click="Button_Click_14" Background="#FFD60F0F" FontFamily="Bahnschrift Condensed" FontSize="36" Width="36" Height="35" HorizontalAlignment="Center" />
+            <Button Grid.Column="3" Content="+" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click" Background="#FF82F924" FontFamily="Bahnschrift Condensed" FontSize="36" Width="36" Height="35" />
+            <Button Grid.Column="3" Content="+" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click_3" Background="#FF82F924" FontFamily="Bahnschrift Condensed" FontSize="36" Width="36" Height="35" />
+            <Button Grid.Column="3" Content="+" Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click_7" Background="#FF82F924" FontFamily="Bahnschrift Condensed" FontSize="36" Width="36" Height="35" />
+            <Button Grid.Column="3" Content="+" Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click_5" Background="#FF82F924" FontFamily="Bahnschrift Condensed" FontSize="36" Width="36" Height="35" />
+            <Button Grid.Column="3" Content="+" Grid.Row="3"  HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click_9" Background="#FF82F924" FontFamily="Bahnschrift Condensed" FontSize="36"  Width="36" Height="35"     />
+            <Button Grid.Column="3" Content="+" Grid.Row="5"  HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click_11" Background="#FF82F924" FontFamily="Bahnschrift Condensed" FontSize="36"  Width="36" Height="35"  />
+            <Button Grid.Column="3" Content="+" Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click_13" Background="#FF82F924" FontFamily="Bahnschrift Condensed" FontSize="36"  Width="36" Height="35"  />
+            <Button Grid.Column="3" Content="+" Grid.Row="7"  HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click_15" Background="#FF82F924" FontFamily="Bahnschrift Condensed" FontSize="36"  Width="36" Height="35" />
+            <TextBox  IsReadOnly = "True" Name= "vigor"      Grid.Row="0"    Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="56" Height="18" TextChanged="vigor_TextChanged" />
+            <TextBox  IsReadOnly = "True" Name="mind"       Grid.Row="1"     Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="56" Height="18"  TextChanged="mind_TextChanged" />
+            <TextBox  IsReadOnly = "True" Name="endurance"  Grid.Row="4"        Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="56" Height="18" TextChanged="endourance_TextChanged" />
+            <TextBox  IsReadOnly = "True" Name="strength"   Grid.Row="2"        Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="56" Height="18" TextChanged="strength_TextChanged"/>
+            <TextBox  IsReadOnly = "True" Name="dexterity"  Grid.Row="3"        Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="56" Height="18" TextChanged="dexterity_TextChanged"/>
+            <TextBox  IsReadOnly = "True" Name="inteligence" Grid.Row="5"            Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="56" Height="18" TextChanged="inteligence_TextChanged"/>
+            <TextBox  IsReadOnly = "True" Name="faith"      Grid.Row="6"    Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="56" Height="18" TextChanged="faith_TextChanged"/>
+            <TextBox  IsReadOnly = "True" Name="arcane"     Grid.Row="7"                        Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="56" Height="18"  TextChanged="arcane_TextChanged"/>
+        </Grid>
+        <Grid RenderTransformOrigin="0.537,0.498" Margin="431,205,391,36" Background="#63000000">
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="131*"/>
+                <RowDefinition Height="131*"/>
+                <RowDefinition Height="131*"/>
+                <RowDefinition Height="131*"/>
+                <RowDefinition Height="131*"/>
+                <RowDefinition Height="131*"/>
+                <RowDefinition Height="131*"/>
+                <RowDefinition Height="131*"/>
+                <RowDefinition Height="131*"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="133*"/>
+                <ColumnDefinition Width="133*"/>
+                <ColumnDefinition Width="133*"/>
+                <ColumnDefinition Width="133*"/>
+                <ColumnDefinition Width="139*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Atack Stats"   VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFB571DE" HorizontalAlignment="Left" Width="89" Grid.ColumnSpan="2" Margin="81,0,0,0"/>
+            <Label Content="Defense Stats"  VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed" Margin="0,0,105,0" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="112" Foreground="#FFF98383"/>
+            <Label Content="Dmg Type"  VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFB571DE" HorizontalAlignment="Center" Width="90" Grid.Row="1"/>
+            <Label Content="Strike" VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFB571DE" HorizontalAlignment="Center" Width="90" Grid.Column="1" Grid.Row="1"/>
+            <Label Content="Dmg Phys"  VerticalAlignment="Top" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFB571DE" HorizontalAlignment="Center" Width="90" Grid.Row="2" Margin="0,9,0,0"/>
+            <Label Name="DmgPhysStrike" VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFEABC1D" HorizontalAlignment="Center" Width="90" Grid.Row="2" Grid.Column="1"/>
+            <Label Content="Dmg Magi"  VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFB571DE" HorizontalAlignment="Center" Width="90" Grid.Row="4"/>
+            <Label  Name="DmgMagiStrike"  VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FF091E90" HorizontalAlignment="Center" Width="90" Grid.Row="4" Grid.Column="1" Background="{x:Null}"/>
+            <Label Content="Dmg Fire"  VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFB571DE" HorizontalAlignment="Center" Width="90" Grid.Row="3"/>
+            <Label Name="DmgFireStrike"  VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFF51A0F" HorizontalAlignment="Center" Width="90" Grid.Row="3" Grid.Column="1"/>
+            <Label Content="Dmg Light"  VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFB571DE" HorizontalAlignment="Center" Width="90" Grid.Row="5"/>
+            <Label Name="DmgLightStrike" VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFEBFF32" HorizontalAlignment="Center" Width="90"  Grid.Column="1" Grid.Row="5"/>
+            <Label Content="Dmg Holy"  VerticalAlignment="Top" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFB571DE" HorizontalAlignment="Center" Width="90" Grid.Row="6" Margin="0,13,0,0"/>
+            <Label Name="DmgHolyStrike" VerticalAlignment="Top" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFF1DE0C" HorizontalAlignment="Center" Width="90" Grid.Column="1" Margin="0,13,0,0" Grid.Row="6" />
+            <Label Content="Dmg Total" VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFB571DE" HorizontalAlignment="Center" Width="90" Grid.Row="8"/>
+            <Label Name="DmgTotalStrike" VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFF92198" HorizontalAlignment="Center" Width="90" Grid.Column="1" Grid.Row="8" Background="{x:Null}" />
+            <Label Content="Dmg Crit"  VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFB571DE" HorizontalAlignment="Center" Width="90" Grid.Row="7"/>
+            <Label Name="DmgCritStrike" VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FF460602" HorizontalAlignment="Center" Width="90" Grid.Row="7" Grid.Column="1"/>
+            <Label Grid.Column="4" Content="Physical" VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFF98383" HorizontalAlignment="Center" Width="90" Grid.Row="2"/>
+            <Label x:Name="DfcPhysAmount" VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFEABC1D" HorizontalAlignment="Center" Width="90" Grid.Column="3" Grid.Row="2" />
+            <Label Grid.Column="4" Content="Magical"  VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFF98383" HorizontalAlignment="Center" Width="90" Grid.Row="4"/>
+            <Label x:Name="DfcMagicAmount" VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FF091E90" HorizontalAlignment="Center" Width="90" Grid.Column="3" Grid.Row="4" />
+            <Label Grid.Column="4" Content="Fire" VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFF98383" HorizontalAlignment="Center" Width="90" Grid.Row="3" Background="{x:Null}"/>
+            <Label x:Name="DfcFireAmount"  VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFF51A0F" HorizontalAlignment="Center" Width="90" Grid.Row="3" Grid.Column="3"/>
+            <Label Grid.Column="4" Content="Lightning"  VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFF98383" HorizontalAlignment="Center" Width="90" Grid.Row="5"/>
+            <Label x:Name="DfcLightAmount"  VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFEBFF32" HorizontalAlignment="Center" Width="90" Grid.Row="5" Grid.Column="3"/>
+            <Label Grid.Column="4" Content="Type"  VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFF98383" HorizontalAlignment="Center" Width="90" Grid.Row="1"/>
+            <Label Content="Amount"  VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFF98383" HorizontalAlignment="Center" Width="90" Grid.Row="1" Grid.Column="3"/>
+            <Label  Content="Holy" Grid.Column="4" VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFF98383" HorizontalAlignment="Center" Width="90" Grid.Row="6"/>
+            <Label x:Name="DfcHolyAmount"   VerticalAlignment="Center" Height="34" FontSize="20" FontFamily="Bahnschrift Condensed"  Foreground="#FFF1DE0C" HorizontalAlignment="Center" Width="90" Grid.Row="6" RenderTransformOrigin="0.811,0.722" Grid.Column="3"/>
+
+
+        </Grid>
+    </Grid>
+
+</Window>
